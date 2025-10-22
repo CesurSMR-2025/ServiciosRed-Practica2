@@ -37,6 +37,7 @@ Algunos TLD de código de país (ccTLD) también se utilizan de manera creativa 
 
 ## Como y quien gestiona los TLD y SLD
 La gestión de los TLD y SLD es un proceso colaborativo que involucra a varias entidades:
+
 - **ICANN (Internet Corporation for Assigned Names and Numbers)**: Es la organización responsable de coordinar y supervisar el sistema de nombres de dominio a nivel global. ICANN gestiona la asignación de TLD y establece políticas para su administración.
 - **Registradores de Dominios**: Son empresas acreditadas por ICANN que permiten a los usuarios registrar nombres de dominio bajo los TLD y SLD disponibles. Estos registradores actúan como intermediarios entre los usuarios y ICANN, facilitando el proceso de registro y gestión de dominios.
 - **Registros de Dominios**: Son organizaciones responsables de la administración técnica y operativa de un TLD específico. Por ejemplo, Verisign es el registro para el TLD .com y .net, mientras que Nominet gestiona el TLD .uk. Los registros mantienen las bases de datos de nombres de dominio y aseguran que las solicitudes de resolución se dirijan correctamente a los servidores DNS correspondientes.

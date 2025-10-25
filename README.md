@@ -157,7 +157,7 @@ address=/debian3/192.168.56.3
 address=/debian4/192.168.56.4
 
 # Interfaz en la que dnsmasq escuchará (opcional pero recomendable)
-interface=eth0
+interface=enp0s8
 
 # Evita que escuche en otras interfaces (opcional)
 bind-interfaces
@@ -170,7 +170,7 @@ sudo systemctl restart dnsmasq
 ```
 
 ### Configuración de los Clientes DNS (debian2, debian3, debian4)
-#### EN debian2, debian3, debian4
+#### En debian2, debian3, debian4
 En cada una de las maquinas cliente, configuraremos el resolver DNS para que utilice nuestro servidor DNS (debian1) para resolver los nombres de dominio.
 Editaremos el archivo `/etc/resolv.conf` y **añadiremos** la siguiente línea al principio del archivo:
 
@@ -178,4 +178,17 @@ Editaremos el archivo `/etc/resolv.conf` y **añadiremos** la siguiente línea a
 nameserver 192.168.56.1
 ```
 
-Es importante añadir esta línea al principio del archivo para asegurarnos de que el sistema utilice nuestro servidor DNS antes que cualquier otro servidor configurado. Tambi
+Es importante añadir esta línea al principio del archivo para asegurarnos de que el sistema utilice nuestro servidor DNS antes que cualquier otro servidor configurado. También podemos añadir otras líneas para incluir servidores DNS adicionales si lo deseamos.
+
+### Entrega
+Para esta práctica solo debereis entregar una serie de capturas en las que se vea vuestro nombre de usuario y el nombre correcto de cada máquina. Las capturas que debereis entregar son las siguientes:
+
+- Captura de la salida de `ip a` con la información de las interfaces de red.
+- Captura del archivo `/etc/hosts` mostrando la configuración de los nombres de las máquinas en debian1, debian2, debian3 y debian4.
+- Captura del archivo `/etc/resolv.conf` mostrando los servidores DNS configurados en las maquinas cliente, debian2, debian3 y debian4.
+- Captura de la salida del comando `systemctl status dnsmasq` en el servidor DNS (debian1) para verificar que el estado del servicio.
+- Captura del archivo `/etc/dnsmasq.conf` mostrando la configuración del servidor DNS en debian1.
+- Captura de la salida del comando `nslookup debian1.midominio.local` en debian2. Para verificar que la resolución de nombres funciona correctamente.
+- Captura de la salida del comando `nslookup debian2.midominio.local` en debian2. Para verificar que la resolución de nombres funciona correctamente.
+- Captura de la salida del comando `nslookup debian3.midominio.local` en debian2. Para verificar que la resolución de nombres funciona correctamente.
+- Captura de la salida del comando `nslookup debian4.midominio.local` en debian2. Para verificar que la resolución de nombres funciona correctamente.

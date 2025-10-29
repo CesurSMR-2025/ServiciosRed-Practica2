@@ -151,10 +151,10 @@ Una vez instalado, configuraremos dnsmasq para que actúe como nuestro servidor 
 domain=midominio.local
 
 # Dirección IP que se asignará a cada nombre
-address=/debian1/192.168.56.1
-address=/debian2/192.168.56.2
-address=/debian3/192.168.56.3
-address=/debian4/192.168.56.4
+address=/debian1.midominio.local/192.168.56.1
+address=/debian2.midominio.local/192.168.56.2
+address=/debian3.midominio.local/192.168.56.3
+address=/debian4.midominio.local/192.168.56.4
 
 # Interfaz en la que dnsmasq escuchará (opcional pero recomendable)
 interface=enp0s8

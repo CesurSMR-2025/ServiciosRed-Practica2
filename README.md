@@ -125,11 +125,11 @@ En el archivo `/etc/network/interfaces`, añadiremos la siguiente configuración
 ```
 auto enp0s8
 iface enp0s8 inet static
-    address 192.168.56.X
+    address 192.168.1.X
     netmask 255.255.255.0
 ```
 
-Donde `X` sera un numero de la máquina, `192.168.56.1` para `debian1`, `192.168.56.2` para `debian2`, `192.168.56.3` para `debian3` y `192.168.56.4` para `debian4`.
+Donde `X` sera un numero de la máquina, `192.168.1.1` para `debian1`, `192.168.1.2` para `debian2`, `192.168.1.3` para `debian3` y `192.168.1.4` para `debian4`.
 
 Después de realizar estos cambios, reiniciaremos el servicio de red con el comando `sudo systemctl restart networking` o reiniciaremos la maquina para que los cambios se apliquen correctamente.
 
@@ -151,10 +151,10 @@ Una vez instalado, configuraremos dnsmasq para que actúe como nuestro servidor 
 domain=midominio.local
 
 # Dirección IP que se asignará a cada nombre
-address=/debian1.midominio.local/192.168.56.1
-address=/debian2.midominio.local/192.168.56.2
-address=/debian3.midominio.local/192.168.56.3
-address=/debian4.midominio.local/192.168.56.4
+address=/debian1.midominio.local/192.168.1.1
+address=/debian2.midominio.local/192.168.1.2
+address=/debian3.midominio.local/192.168.1.3
+address=/debian4.midominio.local/192.168.1.4
 
 # Interfaz en la que dnsmasq escuchará (opcional pero recomendable)
 interface=enp0s8
@@ -175,7 +175,7 @@ En cada una de las maquinas cliente, configuraremos el resolver DNS para que uti
 Editaremos el archivo `/etc/resolv.conf` y **añadiremos** la siguiente línea al principio del archivo:
 
 ```
-nameserver 192.168.56.1
+nameserver 192.168.1.1
 ```
 
 Es importante añadir esta línea al principio del archivo para asegurarnos de que el sistema utilice nuestro servidor DNS antes que cualquier otro servidor configurado. También podemos añadir otras líneas para incluir servidores DNS adicionales si lo deseamos.
